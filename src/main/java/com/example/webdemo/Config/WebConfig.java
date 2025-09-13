@@ -13,10 +13,12 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
             return new WebMvcConfigurer() {
                 @Override
                 public void addCorsMappings(CorsRegistry registry) {
+
                     registry.addMapping("/api/**")
-                            .allowedOrigins("https://enchanting-liger-9649d3.netlify.app/") // 👈 replace with your Netlify site
-                            .allowedMethods("GET", "POST", "PUT", "DELETE")
+                            .allowedOriginPatterns("*")
+                            .allowedMethods("*")
                             .allowCredentials(true);
+
                 }
             };
         }
